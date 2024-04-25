@@ -21,7 +21,7 @@ from firebase_admin import db
 load_dotenv()
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('creds.json')
+cred = credentials.Certificate(os.getenv(FIREBASE_CREDS))
 
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
